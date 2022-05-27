@@ -26,7 +26,7 @@ def Download():
         Youtube_link = video_Link.get()
         download_Folder = download_Path.get()
         getVideo= YouTube(Youtube_link)
-        videoStream= getVideo.streams.first()
+        videoStream= getVideo.streams.get_highest_resolution()
         videoStream.download(download_Folder)
         messagebox.showinfo("suvveeefully","DOWNLOADED AND SAVE IN\n"+ download_Folder)
 root = tk.Tk()
